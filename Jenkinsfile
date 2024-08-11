@@ -17,9 +17,9 @@ pipeline {
         }
         stage('Deploy to Remote Tomcat') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: '34.205.73.231')], contextPath: '/opt/tomcat/webapps/', war: '**/*.war'
-                }
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://34.205.73.231:8080/manager/text')],
+                       contextPath: '/java-hello-world', war: '**/*.war'
             }
         }
     }
-
+}
