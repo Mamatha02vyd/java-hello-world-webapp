@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     def warFile = '**/target/*.war'
-                    deploy adapters: [tomcat10(credentialsId: TOMCAT_CREDENTIALS, path: '', url: TOMCAT_URL)],
+                    deploy adapters: [tomcat9(credentialsId: TOMCAT_CREDENTIALS, path: '', url: TOMCAT_URL)],
                             contextPath: '/java-hello-world',
                             war: warFile
                 }
