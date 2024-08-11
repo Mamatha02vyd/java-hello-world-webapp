@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         TOMCAT_URL = 'http://54.211.1.4:8080'
-        TOMCAT_CREDENTIALS = credentials('tomcat-remote-credentials')
+        TOMCAT_CREDENTIALS = credentials('tomcat')
     }
 
     tools {
