@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        TOMCAT_URL = 'http://54.211.1.4:8080'
-        TOMCAT_CREDENTIALS = credentials('tomcat')
+        TOMCAT_URL = 'http://54.211.1.4:8080/manager/text' 
+        TOMCAT_CREDENTIALS_ID = 'tomcat' 
     }
 
     tools {
@@ -10,7 +10,7 @@ pipeline {
         jdk 'JDK11'     
     }
     stages {
-        stage ('Checkout') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
@@ -24,7 +24,8 @@ pipeline {
             steps {
                 script {
                     def warFile = '**/target/*.war'
-                    deploy adapters: [tomcat9(credentialsId: TOMCAT_CREDENTIALS, path: '', url: TOMCAT_URL)],
+
+                    deploy adapters: [tomcat9(credentialsId: TOMCAT_CREDENTIALS_ID, url: TOMCAT_URL, path: '')],
                             contextPath: '/java-hello-world',
                             war: warFile
                 }
