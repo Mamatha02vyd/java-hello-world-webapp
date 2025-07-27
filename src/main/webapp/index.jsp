@@ -1,6 +1,6 @@
 <html>
 <body>
-  <h2>Hello Mamathaa ?</h2>
+  <h2>Hello Mamatha ?</h2>
 <h3>Welcome to Cloud With Mamatha| AWS Solution Architect </h3>
   
 <marquee>Welcome to Cloud With Mamatha</marquee>
